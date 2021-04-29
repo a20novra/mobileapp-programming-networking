@@ -11,6 +11,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
 
             }
         });
@@ -88,6 +93,21 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String json) {
             Log.d("TAG", json);
+            try {
+                // Ditt JSON-objekt som Java
+                JSONArray jsonarray = new JSONArray(json);
+                for(int i = 0; i < jsonarray.length(); i++){
+                    JSONObject object = jsonarray.getJSONObject(i);
+                    String name = object.getString("name");
+                    int height = object.getInt("size");
+                    String location = object.getString("location");
+                    item.add(new Mountain(name, height, location));
+                    adapter.notifyDataSetChanged();
+                }
+
+            } catch (JSONException e) {
+                Log.e("brom","E:"+e.getMessage());
+            }
         }
     }
 
