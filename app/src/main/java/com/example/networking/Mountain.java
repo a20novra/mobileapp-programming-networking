@@ -12,16 +12,16 @@ public class Mountain<string> {
         this.description = description;
     }
 
-    public String getName(){
-        return name;
+    public String getName(String name){
+        return this.name;
     }
 
-    public int getHeight(){
-        return height;
+    public int getHeight(String height){
+        return this.height;
     }
 
-    public String getDescription(){
-        return description;
+    public String getDescription(String description){
+        return this.description;
     }
 
 

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String name= item.get(position).getName("name");
+                int height = item.get(position).getHeight("height");
+                String description = item.get(position).getDescription("description");
+                String msg = name + "is about " + height + "." + description + ".";
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
 
 
             }
