@@ -3,13 +3,13 @@ package com.example.networking;
 public class Mountain<string> {
     private String name;
     private int height;
-    private String description;
+    private String location;
 
 
-    public Mountain(String name, int height, String description){
+    public Mountain(String name, int height, String location){
         this.name = name;
         this.height = height;
-        this.description = description;
+        this.location = location;
     }
 
     public String getName(String name){
@@ -20,8 +20,8 @@ public class Mountain<string> {
         return this.height;
     }
 
-    public String getDescription(String description){
-        return this.description;
+    public String getLocation(String location){
+        return this.location;
     }
 
 

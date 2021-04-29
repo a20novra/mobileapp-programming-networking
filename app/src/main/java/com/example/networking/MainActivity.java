@@ -44,10 +44,9 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String name= item.get(position).getName("name");
                 int height = item.get(position).getHeight("height");
-                String description = item.get(position).getDescription("description");
-                String msg = name + "is about " + height + "." + description + ".";
-                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
-
+                String location = item.get(position).getLocation("location");
+                String msg = name + " is about " + height + " meter. " + "location: " + location + ".";
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
 
             }
         });
