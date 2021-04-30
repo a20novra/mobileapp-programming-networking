@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
                 String location = item.get(position).getLocation("location");
                 String msg = name + " is about " + height + " meter. " + "location: " + location + ".";
                 Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
-
             }
         });
 
